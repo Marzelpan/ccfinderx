@@ -27,10 +27,18 @@
 
 #elif defined __GNUC__
 
+#ifdef HAVE_UNORDERED_SET
+
+#include <unordered_set>
+#define HASH_SET std::unordered_set
+
+#else
 // 2008/06/25 Modified to use TR1 container.
 
 #include <tr1/unordered_set>
 #define HASH_SET std::tr1::unordered_set
+
+#endif
 
 #endif
 

@@ -46,10 +46,20 @@ int __cdecl _fseeki64 (FILE *stream, __int64 offset, int whence);
 #define FREAD fread
 #define FGETC fgetc
 #define FPUTC fputc
-#define FTELL64 ftello64
 #define FTELL ftell
-#define FSEEK64 fseeko64
 #define FSEEK fseek
+
+#if defined(__APPLE__) && defined(__MACH__)
+
+#define FTELL64 ftello
+#define FSEEK64 fseeko
+
+#else
+
+#define FTELL64 ftello64
+#define FSEEK64 fseeko64
+
+#endif
 
 #endif
 

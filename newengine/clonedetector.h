@@ -14,6 +14,7 @@
 #include <boost/thread.hpp>
 
 #include "../threadqueue/threadqueue.h"
+#include "ccfx/ccfxcommon.h"
 
 #if defined _MSC_VER
 #undef max
@@ -516,7 +517,7 @@ private:
 				boost::uint64_t cloneSetReferenceNumber)
 		{
 			//const typename std:: vector<ElemType> &seq = refSeq();
-			size_t unitLength = getUnitLength();
+			size_t unitLength = CloneSetListener::getUnitLength();
 
 			for (size_t csi = 0; csi < cloneSet.size(); ++csi) {
 				const CloneSetItem &cs = cloneSet[csi];

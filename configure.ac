@@ -4,6 +4,7 @@ AC_INIT(ccfx/ccfx.cpp,10.2.8)
 AM_INIT_AUTOMAKE(1.8)
 
 AC_PROG_CXX
+AC_LANG([C++])
 
 AC_PROG_LIBTOOL
 AC_CONFIG_MACRO_DIR([m4])
@@ -29,6 +30,9 @@ if test x"$ICU_CHECK" != x"yes" ; then
 fi
 ICU_LIBS=`icu-config --ldflags --ldflags-icuio --ldflags-layout`
 AC_SUBST(ICU_LIBS)
+
+# Check for unordered_map and unordered_set
+AC_CHECK_HEADERS([unordered_map unordered_set])
 
 LT_INIT
 CCFINDER_LIB_VER="10:2:8"

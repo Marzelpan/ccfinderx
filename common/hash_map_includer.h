@@ -29,11 +29,20 @@
 
 #elif defined __GNUC__
 
+#ifdef HAVE_UNORDERED_MAP
+
+#include <unordered_map>
+#define HASH_MAP std::unordered_map
+#define HASH_COMPARE std::hash
+
+#else
 // 2008/06/25 Modified to use TR1 container.
 
 #include <tr1/unordered_map>
 #define HASH_MAP std::tr1::unordered_map
 #define HASH_COMPARE std::tr1::hash
+
+#endif
 
 #endif
 
