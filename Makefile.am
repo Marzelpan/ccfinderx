@@ -109,7 +109,6 @@ ccfx_CCFinderXLib_lib_CCFinderXLib_la_LIBADD = $(common_LIBADD)
 
 scriptsdir = $(pkgdatadir)/scripts
 scripts_ppdir = $(scriptsdir)/pp
-utilitydir = $(pkgdatadir)/utility
 
 pkgdata_DATA = \
 	macOS/ccfx_prep_scripts.ini \
@@ -119,8 +118,6 @@ pkgdata_DATA = \
 	macOS/icu4j-4_0_1.jar \
 	macOS/icu4j-charsets-4_0_1.jar \
 	macOS/icu4j-localespi-4_0_1.jar
-
-utility_DATA = macOS/utility/ExecutionModuleDirectory.class
 
 scripts_DATA = \
 	macOS/scripts/ccfxconfig.py \
