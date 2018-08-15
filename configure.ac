@@ -1,5 +1,5 @@
 AC_PREREQ(2.5.2)
-AC_INIT(ccfx/ccfx.cpp,10.2.8)
+AC_INIT(ccfinderx,10.2.8)
 
 AM_INIT_AUTOMAKE(1.8)
 

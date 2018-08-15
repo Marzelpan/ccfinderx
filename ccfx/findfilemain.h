@@ -326,7 +326,7 @@ public:
 			{
 				assert(! script.empty());
 				assert(! argv0.empty());
-				std::string scriptPath = ::make_filename_on_the_same_directory("scripts" + file_separator() + "preprocess.py", argv0);
+				std::string scriptPath = CONFDIR + file_separator() + "scripts" + file_separator() + "preprocess.py";
 				ArgvBuilder argv;
 				argv.push_back(thePythonInterpreterPath);
 				argv.push_back(scriptPath);
@@ -383,7 +383,7 @@ public:
 			break;
 		case MODE_PRINTAVAILABLEENCODINGS:
 			{
-				std::string scriptPath = ::make_filename_on_the_same_directory("scripts" + file_separator() + "easytorq_helper.py", argv0);
+				std::string scriptPath = CONFDIR + file_separator() + "scripts" + file_separator() + "easytorq_helper.py";
 				ArgvBuilder argv;
 				argv.push_back(thePythonInterpreterPath);
 				argv.push_back(scriptPath);

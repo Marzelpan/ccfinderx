@@ -111,7 +111,7 @@ public:
 		//std::cerr << "debug: tempFileDir = " << tempFileDir << std::endl;
 		std::string tempFile1 = ::make_temp_file_on_the_same_directory(tempFileDir, "ccfx-prep", ".tmp");
 
-		std::string scriptPath = ::make_filename_on_the_same_directory("scripts" + file_separator() + "preprocess.py", argv0);
+		std::string scriptPath = CONFDIR + file_separator() + "scripts" + file_separator() + "preprocess.py";
 
 		ArgvBuilder argv;
 		argv.push_back(thePythonInterpreterPath);
@@ -191,7 +191,7 @@ public:
 			for (std::vector<std::pair<std::string/* ext */, std::string/* scriptFile */> >::const_iterator si = data.begin(); si != data.end(); ++si) {
 				const std::string &extension = si->first;
 				const std::string &scriptName = si->second;
-				std:: string path = make_filename_on_the_same_directory(std::string("scripts") + fileSep + "pp" + fileSep + scriptName + ".py", argv0);
+				std:: string path = CONFDIR + fileSep + "scripts" + fileSep + "pp" + fileSep + scriptName + ".py";
 				PathTime pt;
 				if (! PathTime::getFileMTime(path, &pt)) {
 					*pErrorMessage = (boost::format("error: can't open a script file '%s'") % path).str();
@@ -273,7 +273,7 @@ private:
 			}
 		}
 		
-		std::string scriptPath = make_filename_on_the_same_directory("scripts" + file_separator() + "preprocess.py", argv0);
+		std::string scriptPath = CONFDIR + file_separator() + "scripts" + file_separator() + "preprocess.py";
 		ArgvBuilder argv;
 		argv.push_back(thePythonInterpreterPath);
 		argv.push_back(scriptPath);
@@ -353,7 +353,7 @@ public:
 			}
 		}
 		
-		std::string scriptPath = make_filename_on_the_same_directory("scripts" + file_separator() + "preprocess.py", argv0);
+		std::string scriptPath = CONFDIR + file_separator() + "scripts" + file_separator() + "preprocess.py";
 		ArgvBuilder argv;
 		argv.push_back(thePythonInterpreterPath);
 		argv.push_back(scriptPath);
@@ -419,7 +419,7 @@ public:
 
 		std::string tempFile1 = ::make_temp_file_on_the_same_directory(tempFileDir, "ccfx-prep", ".tmp");
 
-		std::string scriptPath = ::make_filename_on_the_same_directory("scripts" + file_separator() + "preprocess.py", argv0);
+		std::string scriptPath = CONFDIR + file_separator() + "scripts" + file_separator() + "preprocess.py";
 		ArgvBuilder argv;
 		argv.push_back(thePythonInterpreterPath);
 		argv.push_back(scriptPath);
